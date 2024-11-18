@@ -29,7 +29,7 @@ resource "aws_instance" "db-instance" {
 }
 
 resource "aws_vpc" "main-vpc" {
-  cidr_block = "0.0.0.0/0"
+  cidr_block = "0.0.0.0/24"
   tags = {
     Name = "project-18-11-2024-vpc"
   }
@@ -122,3 +122,8 @@ resource "aws_security_group" "mysql_sg" {
     cidr_blocks = var.port_egress["cidr_blocks"]
   }
 }
+resource "aws_subnet" "public" {
+  availability_zone = var.availability_zone
+  cidr_block        = var.public_subnet_cidr
+}
+

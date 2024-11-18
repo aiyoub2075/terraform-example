@@ -25,3 +25,14 @@ variable "port_egress" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 }
+variable "availability_zone" {
+  default = "eu-central-1a"
+}
+
+variable "region" {
+  default = "eu-central-1"
+}
+
+variable "public_subnet_cidr" {
+  default = "10.0.0.0/20"
+}
